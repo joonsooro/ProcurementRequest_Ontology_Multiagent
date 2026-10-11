@@ -1,0 +1,37 @@
+{
+  "name": "procurement-request-ontology-multiagent",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/pg": "^8.20.0",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "run-sql": "node --env-file=.env run-sql.ts",
+    "apply-action-schema": "node apps/ontology/src/apply-schema.ts",
+    "setup:procurement": "node apps/ontology/src/apply-foundation.ts",
+    "check": "pnpm -r exec tsc --noEmit",
+    "test:ontology": "node --env-file=.env --test apps/ontology/src/tests/*.test.ts",
+    "dev:ontology": "node --env-file=.env apps/ontology/src/index.ts",
+    "dev:web": "pnpm --filter @ontology/data-platform dev",
+    "build": "pnpm --filter @ontology/data-platform build",
+    "test:shared": "node --test apps/data-platform/tests/api.test.ts apps/agents/src/helpers/*.test.ts",
+    "demo:reset": "pnpm setup:procurement && pnpm run-sql seeds/01-procurement-agent-demo.sql",
+    "agent:analytics": "node --env-file=.env apps/agents/src/agents/procurement/analytics.ts",
+    "agent:monitoring": "node --env-file=.env apps/agents/src/agents/procurement/monitoring.ts",
+    "agent:planning": "node --env-file=.env apps/agents/src/agents/procurement/planning.ts",
+    "agent:verification": "node --env-file=.env apps/agents/src/agents/procurement/verification.ts",
+    "test:agents": "node --test apps/agents/src/tools/procurement/*.test.ts",
+    "evaluate:agents": "node --env-file=.env apps/ontology/src/tests/evaluate-agents.ts"
+  },
+  "dependencies": {
+    "@neon/config": "^1.8.3",
+    "@neon/env": "^1.5.0",
+    "@openai/codex-sdk": "^0.159.3",
+    "pg": "^8.20.0"
+  }
+}

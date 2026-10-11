@@ -1,0 +1,10 @@
+/* Style the Blueprint investigation workspace with a request list and contextual object panels. */
+.procurement-dashboard{flex:1;min-width:0;overflow:auto;padding:28px;background:#f5f7f9}
+.procurement-dashboard>header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:20px}
+.procurement-dashboard h1{font-size:26px;margin:0 0 8px}.procurement-dashboard h2{font-size:22px;margin-top:0}
+.procurement-layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:24px}.procurement-layout>aside{position:sticky;top:0;align-self:start}
+.request-row{display:flex;flex-direction:column;text-align:left;width:100%;padding:15px 12px;gap:7px;background:white;border:1px solid #dce1e6;border-radius:4px;margin-top:8px;cursor:pointer}.request-row.selected{border-color:#215db0;background:#eaf2fc}.request-row small{line-height:1.5;overflow-wrap:anywhere}
+.procurement-layout>section{min-width:0;display:flex;flex-direction:column;gap:18px}.procurement-dashboard .bp6-card{overflow:auto}.procurement-dashboard table{width:100%}.procurement-dashboard td{overflow-wrap:anywhere}.procurement-dashboard .muted{color:#5f6b7c;font-size:13px}.stock-block{border-left:3px solid #8f99a8;padding:10px 14px;margin:12px 0;background:#f6f8fa}.procurement-dashboard pre{white-space:pre-wrap;overflow-wrap:anywhere}.procurement-dashboard summary{cursor:pointer;padding:10px 0}
+@media(max-width:950px){.procurement-layout{grid-template-columns:1fr}.procurement-layout>aside{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}}
+
+.procurement-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}.procurement-metrics strong{display:block;font-size:30px;margin-top:8px}.procurement-metrics span{font-size:13px;color:#5f6b7c}
